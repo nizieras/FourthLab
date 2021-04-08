@@ -7,5 +7,5 @@ FourthLab
 Каждый раз, когда совершается полный оборот вокруг оси, 
 на экран отображается поздравление с добрым утром и Название планеты.
 Каждую планету реализовать в отдельном потоке.
-![](Ссылка 1)
-![](Ссылка 2)
+![](https://github.com/nizieras/FourthLab/blob/ccaecd95bc2bdbc57c501f48ad25edef39ca3ca1/ClassDiagram.png)
+![](https://github.com/nizieras/FourthLab/blob/ccaecd95bc2bdbc57c501f48ad25edef39ca3ca1/SequenceDiagram.png)
