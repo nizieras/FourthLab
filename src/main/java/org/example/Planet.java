@@ -1,23 +1,18 @@
 package org.example;
 
-import java.io.OutputStream;
-
 public class Planet implements Runnable{
 
     private int days;
     private int year;
     private double planetDay;
     private String planetName;
-    private CommonResourse commonResourse;
 
-
-    public Planet(int days, int year, double planetDay, String planetName, CommonResourse commonResourse)
+    public Planet(int days, int year, double planetDay, String planetName)
     {
         this.planetDay = planetDay;
         this.days = days;
         this.year = year;
         this.planetName = planetName;
-        this.commonResourse = commonResourse;
     }
 
     public int getDays() {
@@ -47,7 +42,7 @@ public class Planet implements Runnable{
     @Override
     public void run() {
         try {
-            int cycleNum = 2;
+            int cycleNum = 5;
             while(cycleNum>0)
             {
                 int countDays = this.days;
@@ -57,17 +52,17 @@ public class Planet implements Runnable{
                     while(countPlanetDay>0)
                     {
                         countPlanetDay-=0.1;
-                        Thread.sleep(50);
+                        Thread.sleep(5);
                     }
-                    synchronized(commonResourse)
+                    synchronized(System.out)
                     {
-                        commonResourse.output.println("Доброе утро "+ this.planetName);
+                        System.out.println("Доброе утро "+ this.planetName);
                     }
                     countDays--;
                 }
-                synchronized (commonResourse)
+                synchronized (System.out)
                 {
-                    commonResourse.output.println("С новым годом "+ this.planetName);
+                    System.out.println("С новым годом "+ this.planetName);
                 }
                 cycleNum--;
             }
@@ -75,6 +70,5 @@ public class Planet implements Runnable{
         catch (InterruptedException e) {
             e.printStackTrace();
         }
-
     }
 }

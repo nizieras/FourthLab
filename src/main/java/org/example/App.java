@@ -14,7 +14,7 @@ public class App extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("App.fxml"));
         Scene scene = new Scene(root);
         stage.setScene(scene);
-        stage.setTitle("Coffee making");
+        stage.setTitle("Solar System Emulation");
         stage.setWidth(600);
         stage.setHeight(500);
         stage.setResizable(false);
